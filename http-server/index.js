@@ -27,8 +27,7 @@ fs.readFile("registration.html", (err, registration) => {
     registrationContent = registration;
   });
 
-http
-  .createServer((request, response) => {
+const server=http.createServer((request, response) => {
     let url = request.url;
     response.writeHeader(200, { "Content-Type": "text/html" });
     switch (url) {
@@ -47,5 +46,5 @@ http
     }
   })
   const port=arg.port;
-  .listen(port);
+  server.listen(port);
   
