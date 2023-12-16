@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form class="container" id="user-form" action="http://www.google.com" method="POST">
+        <h2>Registration form</h2>
+        <h5>
+            <div>
+                <label for="name" >Name:</label>
+                <input required type="text" id="name" name="name" placeholder="Enter your Name">
+            </div>
+        </h5>
+
+        <h5>
+            <div>
+                <label for="email">Email:</label>
+                <input required type="email" id="email" name="email" placeholder="Enter email">
+            </div>
+        </h5>
+        <h5>
+            <div>
+                <label for="password">Password:</label>
+                <input required type="password" id="password" name="password" placeholder="Enter Password">
+            </div>
+        </h5>
+        <h5>
+            <div>
+                <label for="dob">Date of Birth:</label>
+                <input required type="date" id="dob" name="dob">
+            </div>
+        </h5>
+        <h5>
+            <fieldset>
+                <div>
+                    <input type="checkbox" id="acceptTerms" name="acceptTerms">
+                    <label for="acceptTerms">Accept Terms & Conditions</label>
+                </div>
+            </fieldset>
+        </h5>
+        <button type="submit"   >Submit</button>
+    </form>
+    <div id="ent">
+    <h2>Entries:</h2></div>
+    <div class="inputtable">
+        <div>
+            <table class="inputform" id="user-entries" >
+            </table>
+        </div>
+    </div>
+     <script src="index.js"></script>
+</body>
+</html>
