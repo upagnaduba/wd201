@@ -11,17 +11,11 @@ describe("Todolist Test Suite", () => {
         const today = formattedDate(dateToday);
         const yesterday = formattedDate(new Date(dateToday.setDate(dateToday.getDate() - 1)));
         const tomorrow = formattedDate(new Date(dateToday.setDate(dateToday.getDate() + 2)));
-        add(
-            {
-                title: "Test todo",
-                completed: false,
-                dueDate:new Date().toISOString()
-    });
     });
 
     test("Should add new todo", () => {
         const todoItemsCount = todos.all.length;
-        add(
+        todos.add(
             {
                 title: "Test todo",
                 completed: false,
@@ -38,8 +32,8 @@ describe("Todolist Test Suite", () => {
     test('Should retrieve overdue items', () => {
     const dateToday = new Date();
     const formattedDate = (d) => d.toISOString().split('T')[0]
-    const y = formattedDate(new Date(dateToday.setDate(dateToday.getDate() - 1)));
-    const od = {title: 'Do Coding', dueDate: y,completed:false};
+    const yesterday = formattedDate(new Date(dateToday.setDate(dateToday.getDate() - 1)));
+    const od = {title: 'Do Coding', dueDate: yesterday,completed:false};
     todos.add(od);
     const overdueItems=todos.overdue();
     expect(overdueItems.length).toBe(1);
