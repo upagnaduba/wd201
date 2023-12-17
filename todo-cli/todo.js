@@ -38,14 +38,14 @@ const todoList = () => {
   }
 
   const toDisplayableList = (list) => {
-    let dl="";
+    let dl=[];
     list.forEach(item =>{
       const s=item.completed? "[X]":"[]";
       const t=item.title;
       const due=item.dueDate===today?"":`${item.dueDate}`;
-      dl+=`${s} ${t} ${due}`;
+      dl.push(`${s} ${t} ${due}`);
     });
-    return dl;
+    return dl.join("\n");
   }
 
   return {
