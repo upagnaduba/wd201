@@ -4,6 +4,7 @@ const {all, markAsComplete, add }=todoList();
 
 describe("Todolist Test Suite", () => {
     beforeAll(() => {
+        todos = todoList();
         add(
             {
                 title: "Test todo",
@@ -13,7 +14,7 @@ describe("Todolist Test Suite", () => {
     });
 
     test("Should add new todo", () => {
-        const todoItemsCount = all.length;
+        const todoItemsCount = todos.all.length;
         add(
             {
                 title: "Test todo",
@@ -21,12 +22,12 @@ describe("Todolist Test Suite", () => {
                 dueDate: new Date().toISOString()
             }
         );
-        expect(all.length).toBe(todoItemsCount + 1);
+        expect(todos.all.length).toBe(todoItemsCount + 1);
     });
     test("Should mark a todo as complete", () => {
-        expect(all[0].completed).toBe(false);
+        expect(todos.all[0].completed).toBe(false);
         markAsComplete(0);
-        expect(all[0].completed).toBe(true);
+        expect(todos.all[0].completed).toBe(true);
     });
     test('Should retrieve overdue items', () => {
     const dateToday = new Date();
