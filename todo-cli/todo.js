@@ -1,5 +1,10 @@
 const todoList = () => {
   all = []
+  const dateToday = new Date();
+  const formattedDate = (d) => d.toISOString().split('T')[0];
+  const today = formattedDate(dateToday);
+  const yesterday = formattedDate(new Date(dateToday.setDate(dateToday.getDate() - 1)));
+  const tomorrow = formattedDate(new Date(dateToday.setDate(dateToday.getDate() + 2)));
   const add = (todoItem) => {
     all.push(todoItem)
   }
@@ -58,4 +63,4 @@ const todoList = () => {
     toDisplayableList
   };
 };
-module.exports=todoList;
+module.exports = todoList;
