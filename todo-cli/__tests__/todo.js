@@ -3,8 +3,14 @@ const todoList = require('../todo');
 const {all, markAsComplete, add }=todoList();
 
 describe("Todolist Test Suite", () => {
+    let todos;
     beforeAll(() => {
         todos = todoList();
+        const dateToday=new Date();
+        const formattedDate = (d) => d.toISOString().split('T')[0];
+        const today = formattedDate(dateToday);
+        const yesterday = formattedDate(new Date(dateToday.setDate(dateToday.getDate() - 1)));
+        const tomorrow = formattedDate(new Date(dateToday.setDate(dateToday.getDate() + 2)));
         add(
             {
                 title: "Test todo",
