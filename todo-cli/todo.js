@@ -43,7 +43,7 @@ const todoList = () => {
       const s=item.completed? "[X]":"[]";
       const t=item.title;
       const due=item.dueDate===today?"":`${item.dueDate}`;
-      dl+=`${s} ${t} ${due} \n`;
+      dl+=`${s} ${t} ${due}`;
     });
     return dl;
   }
