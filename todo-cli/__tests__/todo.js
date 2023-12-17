@@ -1,4 +1,5 @@
 const todoList = require('../todo');
+const {all, markAsComplete, add }=todoList();
 
 describe("Todolist Test Suite", () => {
     let todos;
