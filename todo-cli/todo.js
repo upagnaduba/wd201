@@ -42,7 +42,7 @@ const todoList = () => {
   
     const toDisplayableList = (list) => {
       let dl="";
-      all.forEach(item =>{
+      list.forEach(item =>{
         const s=item.completed? "[X]":"[]";
         const t=item.title;
         const due=item.dueDate===today?"":`${item.dueDate}`;
