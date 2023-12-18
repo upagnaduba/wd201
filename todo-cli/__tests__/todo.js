@@ -34,7 +34,7 @@ describe("Todolist Test Suite", () => {
     const dateToday = new Date();
     const formattedDate = (d) => d.toISOString().split('T')[0];
     const today = formattedDate(dateToday);
-    const todayAdd={title: 'Do laundry',dueDate: today,completed:'false'};
+    const todayAdd={title: 'Do laundry',dueDate: today,completed:false};
     const duetic=todos.dueToday().length;
     todos.add(todayAdd);
     const todayItems = todos.dueToday();
