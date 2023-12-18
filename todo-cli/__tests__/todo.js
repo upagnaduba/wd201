@@ -16,7 +16,7 @@ describe("Todolist Test Suite", () => {
     });
     test("Should mark a todo as complete", () => {
         expect(todos.all[0].completed).toBe(false);
-        markAsComplete(0);
+        todos.markAsComplete(0);
         expect(todos.all[0].completed).toBe(true);
     });
     test('Should retrieve overdue items', () => {
@@ -47,7 +47,7 @@ describe("Todolist Test Suite", () => {
     const tomorrow = formattedDate(new Date(dateToday.setDate(dateToday.getDate() + 2)));
     const dl={title:'Return a book',dueDate:tomorrow,completed:false};
     todos.add(dl);
-    const overDueTodoItemsCount =todos.overdue().lengt
+    const overDueTodoItemsCount =todos.overdue().length
     expect(todos.dueLater().length).toBe(overDueTodoItemsCount+1);
   });
 });
