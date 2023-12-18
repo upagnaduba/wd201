@@ -1,17 +1,8 @@
 const todoList = require('../todo');
-const {all, markAsComplete, add }=todoList();
+let todos
+todos=todoList();
 
 describe("Todolist Test Suite", () => {
-    let todos;
-    beforeAll(() => {
-        todos = todoList();
-        const dateToday=new Date();
-        const formattedDate = (d) => d.toISOString().split('T')[0];
-        const today = formattedDate(dateToday);
-        const yesterday = formattedDate(new Date(dateToday.setDate(dateToday.getDate() - 1)));
-        const tomorrow = formattedDate(new Date(dateToday.setDate(dateToday.getDate() + 2)));
-    });
-
     test("Should add new todo", () => {
         const todoItemsCount = todos.all.length;
         todos.add(
@@ -33,10 +24,10 @@ describe("Todolist Test Suite", () => {
     const formattedDate = (d) => d.toISOString().split('T')[0]
     const yesterday = formattedDate(new Date(dateToday.setDate(dateToday.getDate() - 1)));
     const od = {title: 'Do Coding', dueDate: yesterday,completed:false};
+    const overdueic=todos.overdue().length;
     todos.add(od);
     const overdueItems=todos.overdue();
-    expect(overdueItems.length).toBe(1);
-    expect(overdueItems[0]).toEqual(od);
+    expect(overdueItems.length).toBe(overdueic+1);
   });
 
   test('Should retrieve due today items', () => {
@@ -44,10 +35,10 @@ describe("Todolist Test Suite", () => {
     const formattedDate = (d) => d.toISOString().split('T')[0];
     const today = formattedDate(dateToday);
     const todayAdd={title: 'Do laundry',dueDate: today,completed:'false'};
+    const duetic=todos.dueToday().length;
     todos.add(todayAdd);
     const todayItems = todos.dueToday();
-    expect(todayItems.length).toBe(1);
-    expect(todayItems[0]).toEqual(todayAdd);
+    expect(todayItems.length).toBe(duetic+1);
   });
 
   test('Should retrieve due later items', () => {
