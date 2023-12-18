@@ -5,9 +5,11 @@ const todoList = () => {
   const today = formattedDate(dateToday);
   const yesterday = formattedDate(new Date(dateToday.setDate(dateToday.getDate() - 1)));
   const tomorrow = formattedDate(new Date(dateToday.setDate(dateToday.getDate() + 2)));
+  
   const add = (todoItem) => {
     all.push(todoItem)
   }
+  
   const markAsComplete = (index) => {
     all[index].completed = true
   }
