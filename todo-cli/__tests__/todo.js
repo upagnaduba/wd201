@@ -46,8 +46,8 @@ describe("Todolist Test Suite", () => {
     const formattedDate = (d) => d.toISOString().split('T')[0];
     const tomorrow = formattedDate(new Date(dateToday.setDate(dateToday.getDate() + 2)));
     const dl={title:'Return a book',dueDate:tomorrow,completed:false};
-    const overDueTodoItemsCount =todos.dueLater().length
+    const duelaterTodoItemsCount =todos.dueLater().length
     todos.add(dl);
-    expect(todos.dueLater().length).toBe(overDueTodoItemsCount+1);
+    expect(todos.dueLater().length).toBe(duelaterTodoItemsCount+1);
   });
 });
