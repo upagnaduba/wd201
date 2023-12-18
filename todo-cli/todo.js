@@ -15,7 +15,7 @@ const todoList = () => {
   const overdue = () => {
       overduelist=[]
       for (let i = 0; i < all.length; i++) {
-          if (all[i].dueDate=== yesterday){
+          if (all[i].dueDate=== yesterday && !all[i].completed){
               overduelist.push(all[i])
           }
       }
@@ -35,7 +35,7 @@ const todoList = () => {
   const dueLater = () => {
       dueLaterlist=[]
       for (let i = 0; i < all.length; i++) {
-          if (all[i].dueDate=== tomorrow){
+          if (all[i].dueDate=== tomorrow && !all[i].completed){
               dueLaterlist.push(all[i])
           }
       }
