@@ -44,7 +44,7 @@ describe("Todolist Test Suite", () => {
   test('Should retrieve due later items', () => {
     const dateToday = new Date();
     const formattedDate = (d) => d.toISOString().split('T')[0];
-    const tomorrow = formattedDate(new Date(dateToday.setDate(dateToday.getDate() + 2)));
+    const tomorrow = formattedDate(new Date(dateToday.setDate(dateToday.getDate() + 1)));
     const dl={title:'Return a book',dueDate:tomorrow,completed:false};
     const duelaterTodoItemsCount =todos.dueLater().length
     todos.add(dl);
