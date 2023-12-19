@@ -37,7 +37,7 @@ const todoList = () => {
   const dueLater = () => {
       dueLaterlist=[]
       for (let i = 0; i < all.length; i++) {
-          if (all[i].dueDate< today && !all[i].completed){
+          if (all[i].dueDate> today && !all[i].completed){
               dueLaterlist.push(all[i])
           }
       }
